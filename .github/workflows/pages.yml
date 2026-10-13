@@ -27,6 +27,7 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html styles.css config.js app.js favicon.svg .nojekyll _site/
+          cp -r assets _site/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
@@ -46,7 +47,7 @@ jobs:
                       assert r.status == 200
                       assert 'Connectez votre entreprise' in html
                       assert '1FAIpQLSfyG4sKzfZtxfwuSAwXmFKNMn6nCiw4Z3P_yXUirJtTtv0Taw' in html
-                  for asset in ['styles.css', 'app.js', 'config.js', 'favicon.svg', '?lang=en']:
+                  for asset in ['styles.css', 'app.js', 'config.js', 'favicon.svg', '?lang=en', 'assets/polytechnique-blanc.png', 'assets/workshops-fr.pdf', 'assets/workshops-en.pdf', 'assets/cahier-partenariat.pdf']:
                       with urllib.request.urlopen(base + asset, timeout=20) as r:
                           assert r.status == 200
                           assert len(r.read()) > 0

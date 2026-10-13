@@ -23,6 +23,7 @@
     nodes.forEach(node => { node.innerHTML = lang === 'en' ? node.dataset.en : originals.get(node); });
     ariaNodes.forEach(node => node.setAttribute('aria-label', lang === 'en' ? node.dataset.enAria : originalAria.get(node)));
     document.documentElement.lang = lang === 'en' ? 'en-CA' : 'fr-CA';
+    document.querySelectorAll('.workshop-document').forEach(link => { link.href = lang === 'en' ? 'assets/workshops-en.pdf' : 'assets/workshops-fr.pdf'; });
     document.title = metadata[lang].title;
     document.querySelector('meta[name="description"]').content = metadata[lang].description;
     document.querySelector('meta[property="og:title"]').content = metadata[lang].ogTitle;
