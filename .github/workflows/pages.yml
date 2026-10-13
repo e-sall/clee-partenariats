@@ -29,3 +29,25 @@ jobs:
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Verify public page and assets
+        run: |
+          python3 - <<'PY'
+          import time, urllib.request
+          base = 'https://e-sall.github.io/clee-partenariats/'
+          for attempt in range(6):
+              try:
+                  with urllib.request.urlopen(base, timeout=20) as r:
+                      html = r.read().decode('utf-8')
+                      assert r.status == 200
+                      assert 'Connectez votre entreprise' in html
+                      assert '1FAIpQLSfyG4sKzfZtxfwuSAwXmFKNMn6nCiw4Z3P_yXUirJtTtv0Taw' in html
+                  for asset in ['styles.css', 'app.js', 'config.js', 'favicon.svg', '?lang=en']:
+                      with urllib.request.urlopen(base + asset, timeout=20) as r:
+                          assert r.status == 200
+                          assert len(r.read()) > 0
+                  print('PASS: public HTTPS page, expected content, form URL, EN route and all assets return HTTP 200')
+                  break
+              except Exception:
+                  if attempt == 5: raise
+                  time.sleep(10)
+          PY
