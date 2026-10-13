@@ -22,73 +22,43 @@
   <script src="app.js" defer></script>
 </head>
 <body>
-  <a class="skip" href="#main" data-en="Skip to content">Aller au contenu</a>
+<a class="skip" href="#main" data-en="Skip to content">Aller au contenu</a>
+<div class="sheet">
   <header class="header">
-    <div class="wrap header-inner">
-      <a class="brand" href="#" aria-label="CLÉE, accueil" data-en-aria="CLÉE, home"><strong>CLÉE<span class="brand-dot">.</span></strong><span class="brand-school">Polytechnique<br>Montréal</span></a>
-      <nav aria-label="Navigation principale" data-en-aria="Main navigation">
-        <a href="#possibilites" data-en="Opportunities">Les possibilités</a>
-        <a href="#approche" data-en="Our approach">Notre approche</a>
-      </nav>
-      <div class="header-actions"><div class="language" role="group" aria-label="Langue" data-en-aria="Language"><button type="button" lang="fr" data-lang="fr" aria-pressed="true">FR</button><span aria-hidden="true">/</span><button type="button" lang="en" data-lang="en" aria-pressed="false">EN</button></div><a class="button small" href="#contact" data-en="Let's connect ↗">Parlons-en ↗</a></div>
-    </div>
+    <a class="brand" href="https://jc.aep.polymtl.ca" target="_blank" rel="noopener noreferrer"><strong>CLÉE</strong><span>POLYTECHNIQUE MONTRÉAL</span></a>
+    <div class="header-right"><span class="audience" data-en="FOR COMPANIES">ENTREPRISES</span><div class="language" role="group" aria-label="Langue" data-en-aria="Language"><button type="button" data-lang="fr" lang="fr" aria-pressed="true">FR</button><span aria-hidden="true">/</span><button type="button" data-lang="en" lang="en" aria-pressed="false">EN</button></div></div>
   </header>
   <main id="main">
-    <section class="hero">
-      <div class="wrap hero-grid">
-        <div class="hero-copy">
-          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span><span data-en="Industry partnerships · 2026–2027">Partenariats entreprises · 2026–2027</span></p>
-          <h1><span data-en="Connect your company with">Connectez votre entreprise aux</span> <em data-en="tomorrow’s talent.">talents de demain.</em></h1>
-          <p class="hero-lead" data-en="At Polytechnique Montréal, meaningful connections start with a shared ambition.">À Polytechnique Montréal, les bonnes rencontres commencent par une ambition commune.</p>
-          <p class="hero-description" data-en="Tailored student activities. Founding partnerships for the Cahier de l’ingénieur. The CLÉE helps turn your goals into meaningful collaborations.">Activités étudiantes ciblées. Partenariats fondateurs du Cahier de l’ingénieur. Le CLÉE transforme vos objectifs en collaborations pertinentes.</p>
-          <a class="button primary" href="#possibilites"><span data-en="Explore the opportunities">Explorer les possibilités</span><span aria-hidden="true">↗</span></a>
-          <p class="hero-note" data-en="One point of contact. A collaboration shaped around you.">Un point de contact. Une collaboration à votre mesure.</p>
-        </div>
-        <div class="hero-art" aria-hidden="true">
-          <div class="art-grid"></div>
-          <div class="art-heading"><span data-en="CONNECT. BUILD. INSPIRE.">RENCONTRER. CONSTRUIRE. INSPIRER.</span><span>↗</span></div>
-          <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
-          <div class="art-label label-company"><span class="mini-line"></span><span data-en="Your expertise">Votre expertise</span></div>
-          <div class="connection-mark"><span>C</span><span class="mark-middle">↗</span><span>É</span></div>
-          <div class="art-label label-students"><span class="mini-line"></span><span data-en="Their potential">Leur potentiel</span></div>
-          <div class="art-bottom"><span data-en="A shared ambition.">Une ambition commune.</span><span>CLÉE / 26·27</span></div>
-        </div>
-      </div>
-      <div class="wrap hero-footer"><span data-en="STUDENT–INDUSTRY LIAISON COMMITTEE">COMITÉ DE LIAISON ÉTUDIANTS-ENTREPRISES</span><span>POLYTECHNIQUE MONTRÉAL</span></div>
+    <section class="intro" aria-labelledby="title">
+      <p class="eyebrow" data-en="PARTNERSHIPS 2026–2027">PARTENARIATS 2026–2027</p>
+      <h1 id="title" data-en="Connect your company with<br>Polytechnique Montréal’s talent.">Connectez votre entreprise aux talents de<br>Polytechnique Montréal.</h1>
+      <p class="lead" data-en="Hands-on experiences with students. Partnerships built to last.">Des expériences concrètes avec les étudiants et des partenariats qui se construisent dans la durée.</p>
     </section>
-
-    <section class="intro wrap section" aria-labelledby="intro-title">
-      <div class="section-heading"><p class="eyebrow" data-en="01 / Your connection to students">01 / Votre lien avec les étudiants</p><h2 id="intro-title" data-en="The right people. A shared purpose.">Les bons profils.<br>Un objectif commun.</h2></div>
-      <div class="intro-content"><p class="large-copy" data-en="The CLÉE is your point of contact within Polytechnique Montréal’s student community. Together, we design a collaboration that fits your priorities.">Le CLÉE est votre point d’entrée dans l’écosystème étudiant de Polytechnique Montréal. Ensemble, nous construisons une collaboration adaptée à vos priorités.</p>
-        <div class="principles"><div><span class="small-number">01</span><h3 data-en="Relevant students">Des profils pertinents</h3><p data-en="Engineering programs, interests, levels of study and relevant student groups.">Génies, intérêts, niveaux d’études et comités étudiants pertinents.</p></div><div><span class="small-number">02</span><h3 data-en="A tailored format">Un format personnalisé</h3><p data-en="Your goals and expertise shape the experience.">Vos objectifs et votre expertise donnent le ton à l’expérience.</p></div><div><span class="small-number">03</span><h3 data-en="Simple coordination">Une coordination simple</h3><p data-en="The CLÉE supports outreach, registration and activity logistics.">Le CLÉE accompagne la mobilisation, les inscriptions et la logistique des activités.</p></div></div>
-      </div>
+    <section class="offers" aria-label="Possibilités de collaboration" data-en-aria="Collaboration opportunities">
+      <article class="offer">
+        <svg class="icon" aria-hidden="true" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="10" r="4"/><path d="M4 27v-4a8 8 0 0 1 16 0v4M22 7a4 4 0 0 1 0 8M25 18a7 7 0 0 1 4 6v3"/></svg>
+        <h2 data-en="Targeted activities">Activités ciblées</h2>
+        <p data-en="Workshops, panels, site visits and networking with the student profiles you want to reach.">Workshops, panels, visites et rencontres avec les profils qui vous intéressent.</p>
+        <p class="detail" data-en="A format co-designed around your goals, with the CLÉE coordinating the activity.">Un format co-construit selon vos objectifs, avec la coordination du CLÉE.</p>
+        <a class="text-link" href="#contact"><span data-en="Co-design an activity">Co-construire une activité</span><span aria-hidden="true">↗</span></a>
+      </article>
+      <article class="offer">
+        <svg class="icon" aria-hidden="true" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8C12 5 7 5 3 6v20c4-1 9-1 13 2 4-3 9-3 13-2V6c-4-1-9-1-13 2ZM16 8v20M7 11h5M20 11h5M7 16h5M20 16h5"/></svg>
+        <h2 data-en="Cahier de l’ingénieur">Cahier de l’ingénieur</h2>
+        <p data-en="Become a founding partner of a new guide to help students prepare for the workplace.">Devenez partenaire fondateur d’un nouveau guide pour préparer les étudiants au marché du travail.</p>
+        <p class="detail" data-en="Employer visibility, shared expertise and student events, according to your partnership.">Visibilité, partage d’expertise et événements étudiants, selon votre partenariat.</p>
+        <a class="text-link" href="#contact"><span data-en="Explore the partnership">Découvrir le partenariat</span><span aria-hidden="true">↗</span></a>
+      </article>
     </section>
-
-    <section class="opportunities section" id="possibilites" aria-labelledby="opportunities-title"><div class="wrap">
-      <div class="section-top"><div><p class="eyebrow" data-en="02 / Two ways to get involved">02 / Deux façons de s’impliquer</p><h2 id="opportunities-title" data-en="Meet today.<br>Build what comes next.">Se rencontrer aujourd’hui.<br>Construire la suite.</h2></div><p data-en="A hands-on experience or a founding commitment. Find your starting point.">Une expérience concrète ou un engagement fondateur. Trouvez votre point de départ.</p></div>
-      <div class="offers">
-        <article class="offer activity"><div class="offer-top"><span class="tag" data-en="Targeted activities">Activités ciblées</span><span class="offer-number">01</span></div><h3 data-en="Bring your expertise<br>to life.">Faites vivre<br>votre expertise.</h3><p data-en="Give students a closer look at your work through an experience designed with your team, for the profiles you want to reach.">Faites découvrir votre réalité professionnelle à travers une expérience conçue avec votre équipe, pour les profils que vous souhaitez rejoindre.</p><ul><li data-en="Connect with potential future interns and graduates.">Échanger avec de futurs stagiaires et diplômés.</li><li data-en="Showcase your roles, projects and technologies.">Faire découvrir vos métiers, projets et technologies.</li><li data-en="Choose the format and level of involvement together.">Définir ensemble le format et votre implication.</li></ul><a class="text-link" href="#contact"><span data-en="Plan an activity">Construire une activité</span><span aria-hidden="true">↗</span></a></article>
-        <article class="offer founding"><div class="offer-top"><span class="tag" data-en="Founding partners">Partenaires fondateurs</span><span class="offer-number">02</span></div><h3 data-en="Help shape<br>the first edition.">Prenez part<br>à la première édition.</h3><p class="book-title" data-en="Cahier de l’ingénieur · 2026–2027">Cahier de l’ingénieur · 2026–2027</p><p data-en="Help launch a guide organized by engineering discipline, built around four priorities: artificial intelligence, sustainability, technical skills and employability.">Contribuez au lancement d’un guide par génie, articulé autour de quatre priorités : intelligence artificielle, développement durable, compétences techniques et employabilité.</p><ul><li data-en="Founding partner status and a logo on the Cahier’s cover.">Statut de partenaire fondateur et logo sur la couverture du Cahier.</li><li data-en="Engagement through company visits, the résumé event and expert panel.">Implication à travers les visites, la soirée CV et le panel d’experts.</li><li data-en="Visibility across project materials and student communication channels.">Visibilité sur les supports du projet et les canaux de communication étudiants.</li></ul><p class="offer-note" data-en="Content contributions and tailored sponsorship opportunities are also available. The sponsorship proposal details the terms and benefits of each option.">Contributions de contenu et commandites ciblées sont également possibles. La proposition de commandite détaille les modalités et avantages de chaque formule.</p><a class="text-link" href="#contact"><span data-en="Discuss a founding partnership">Discuter d’un partenariat fondateur</span><span aria-hidden="true">↗</span></a></article>
-      </div>
-    </div></section>
-
-    <section class="formats wrap section" aria-labelledby="formats-title"><div class="section-top"><div><p class="eyebrow" data-en="03 / Your expertise, in action">03 / Votre expertise, en action</p><h2 id="formats-title" data-en="Every company<br>has its format.">À chaque entreprise,<br>son format.</h2></div><p data-en="No fully formed concept required. We will find the right approach together.">Pas besoin d’arriver avec un concept prêt. Nous trouvons la bonne formule ensemble.</p></div>
-      <div class="format-grid">
-        <article><span class="icon" aria-hidden="true">⌘</span><h3 data-en="Technical workshops">Workshops techniques</h3><p data-en="A skill, method or tool students can put into practice.">Une compétence, une méthode ou un outil à mettre en pratique.</p></article>
-        <article><span class="icon" aria-hidden="true">◇</span><h3 data-en="Case studies & challenges">Études de cas et challenges</h3><p data-en="A real-world challenge inspired by your work.">Une problématique concrète inspirée de votre réalité.</p></article>
-        <article><span class="icon" aria-hidden="true">↗</span><h3 data-en="Company & industrial visits">Visites d’entreprise</h3><p data-en="An inside look at your facilities, projects and teams.">Vos installations, vos projets et vos équipes, de l’intérieur.</p></article>
-        <article><span class="icon" aria-hidden="true">☷</span><h3 data-en="Panels & professional talks">Panels et rencontres</h3><p data-en="Perspectives and career insights from your professionals.">Les perspectives et parcours de vos professionnels.</p></article>
-        <article><span class="icon" aria-hidden="true">⊕</span><h3 data-en="Technical demonstrations">Démonstrations techniques</h3><p data-en="Your technologies and processes, brought to life.">Vos technologies et procédés, présentés concrètement.</p></article>
-        <article><span class="icon" aria-hidden="true">↔</span><h3 data-en="Targeted networking">Networking ciblé</h3><p data-en="Conversations with the student profiles you want to meet.">Des échanges avec les profils étudiants recherchés.</p></article>
-      </div>
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div><h2 id="contact-title" data-en="An idea for a collaboration?">Une idée de collaboration ?</h2><p data-en="Tell us what interests you, or let’s start with a 15-minute conversation.">Indiquez vos intérêts ou commençons par un échange de 15 minutes.</p></div>
+      <div class="actions"><a class="button primary form-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfyG4sKzfZtxfwuSAwXmFKNMn6nCiw4Z3P_yXUirJtTtv0Taw/viewform" target="_blank" rel="noopener noreferrer"><span data-en="Express my interest">Indiquer mon intérêt</span><span aria-hidden="true">↗</span></a><small class="form-note" data-en="Form opens in a new tab">Formulaire dans un nouvel onglet</small><a class="button secondary mail-link" href="mailto:partenariats@clee.polymtl.ca?subject=%C3%89change%20de%2015%20minutes%20%7C%20Partenariat%20CL%C3%89E"><span data-en="Let’s talk for 15 minutes">Échanger 15 minutes</span><span aria-hidden="true">↗</span></a></div>
     </section>
-
-    <section class="benefits"><div class="wrap benefits-inner"><div><p class="eyebrow" data-en="More than visibility">Au-delà de la visibilité</p><h2 data-en="Build a presence.<br>Create a connection.">Marquez les esprits.<br>Créez du lien.</h2></div><ul><li data-en="Reach relevant student profiles">Rejoindre des profils étudiants pertinents</li><li data-en="Strengthen your employer brand">Développer votre marque employeur</li><li data-en="Introduce your roles and technologies">Faire découvrir vos métiers et technologies</li><li data-en="Build relationships with future engineers">Renforcer votre présence auprès des futurs ingénieurs</li><li data-en="Contribute to a meaningful student initiative">Participer à une initiative étudiante structurante</li></ul></div></section>
-
-    <section class="process wrap section" id="approche" aria-labelledby="process-title"><p class="eyebrow" data-en="04 / From an idea to a collaboration">04 / De l’idée à la collaboration</p><h2 id="process-title" data-en="Let’s start with your goals.">Commençons par vos objectifs.</h2><div class="steps"><article><span>01</span><h3 data-en="Tell us what matters.">Vous nous partagez vos objectifs.</h3><p data-en="Who would you like to meet? Which topics, roles or skills would you like to highlight?">Quels profils souhaitez-vous rencontrer ? Quels sujets, métiers ou compétences mettre en valeur ?</p></article><article><span>02</span><h3 data-en="We explore the possibilities.">Nous identifions les possibilités.</h3><p data-en="We identify relevant students and formats based on your priorities and resources.">Nous identifions les étudiants et formats pertinents selon vos priorités et vos ressources.</p></article><article><span>03</span><h3 data-en="We build it together.">Nous construisons la collaboration.</h3><p data-en="We define the format, contributions and next steps with your team.">Nous précisons avec votre équipe le format, les contributions et les prochaines étapes.</p></article></div></section>
-
-    <section class="contact-section" id="contact" aria-labelledby="contact-title"><div class="wrap contact-inner"><div class="contact-heading"><p class="eyebrow" data-en="Your next connection starts here">Votre prochaine rencontre commence ici</p><h2 id="contact-title" data-en="Let’s build<br>something meaningful.">Donnons une suite<br>à vos idées.</h2><p data-en="An activity, a founding partnership, or simply a first conversation.">Une activité, un partenariat fondateur ou simplement une première discussion.</p></div><div class="contact-paths"><div><h3 data-en="Already know what interests you?">Vous savez déjà ce qui vous intéresse ?</h3><p data-en="Share your priorities through our interest form.">Partagez vos priorités dans notre formulaire d’intérêt.</p><a class="button primary form-link" href="https://docs.google.com/forms/d/e/1FAIpQLSfyG4sKzfZtxfwuSAwXmFKNMn6nCiw4Z3P_yXUirJtTtv0Taw/viewform" target="_blank" rel="noopener noreferrer"><span data-en="Express my interest">Indiquer mon intérêt</span><span aria-hidden="true">↗</span></a><small data-en="Google Forms · opens in a new tab">Google Forms · ouverture dans un nouvel onglet</small></div><div><h3 data-en="Prefer to talk first?">Vous souhaitez d’abord en discuter ?</h3><p data-en="A short conversation to explore what could work for you.">Un court échange pour explorer ce qui vous correspond.</p><a class="text-link mail-link" href="mailto:partenariats@clee.polymtl.ca?subject=%C3%89change%20de%2015%20minutes%20%7C%20Partenariat%20CL%C3%89E"><span data-en="Let’s talk for 15 minutes">Échanger pendant 15 minutes</span><span aria-hidden="true">↗</span></a></div></div></div></section>
   </main>
-  <footer class="footer"><div class="wrap footer-main"><div><a class="brand" href="#"><strong>CLÉE<span class="brand-dot">.</span></strong></a><p data-en="Connecting students and industry.">Le lien entre étudiants et entreprises.</p><a href="https://clee.polymtl.ca" target="_blank" rel="noopener noreferrer" data-en="CLÉE institutional website ↗">Site institutionnel du CLÉE ↗</a></div><div class="contact-person"><strong>Elimane Sall</strong><span data-en="VP Partnerships">VP Partenariats</span><span>CLÉE | Polytechnique Montréal</span><a href="mailto:partenariats@clee.polymtl.ca">partenariats@clee.polymtl.ca</a></div></div><div class="wrap footer-bottom"><span>CLÉE · 2026–2027</span><span data-en="Built around shared ambitions.">Des ambitions qui se rencontrent.</span><a href="#" data-en="Back to top ↑">Retour en haut ↑</a></div></footer>
+  <footer>
+    <div class="person"><strong>Elimane Sall</strong><span class="separator" aria-hidden="true">|</span><span data-en="VP Partnerships">VP Partenariats</span><a href="https://ca.linkedin.com/in/elimane-sall-523720349" target="_blank" rel="noopener noreferrer" data-en="Elimane on LinkedIn ↗">Elimane sur LinkedIn ↗</a></div>
+    <div class="footer-links"><a href="mailto:partenariats@clee.polymtl.ca">partenariats@clee.polymtl.ca</a><a href="https://jc.aep.polymtl.ca" target="_blank" rel="noopener noreferrer" data-en="CLÉE website ↗">Site du CLÉE ↗</a></div>
+  </footer>
+</div>
 </body>
 </html>

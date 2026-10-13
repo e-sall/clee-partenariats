@@ -1,6 +1,6 @@
 # CLÉE · Partenariats entreprises
 
-Landing page statique bilingue, français par défaut, sans dépendance, backend, service payant ou outil de suivi. Adresse cible : https://e-sall.github.io/clee-partenariats/
+One-pager compact bilingue, français par défaut, sans dépendance, backend, service payant ou outil de suivi. Adresse cible : https://e-sall.github.io/clee-partenariats/
 
 ## Modifier le site
 
@@ -41,3 +41,7 @@ Chaque modification poussée sur `main` redéploie le site. Les assets utilisent
 - Courriel : destinataire, objet et corps dans l’application de messagerie.
 - Ancres : possibilités, approche et contact.
 - Vérifier les ressources dans le sous-chemin public, le HTTPS et le statut du workflow.
+
+## Version compacte
+
+Structure réduite selon la référence fournie : introduction, deux offres, conversion et contact. Site institutionnel : https://jc.aep.polymtl.ca. Profil LinkedIn : https://ca.linkedin.com/in/elimane-sall-523720349.
