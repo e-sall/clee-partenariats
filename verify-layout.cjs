@@ -12,11 +12,11 @@ const path=require('node:path');
   await page.goto(process.env.SITE_URL||pathToFileURL(path.resolve('index.html')).href,{waitUntil:'networkidle'});await page.evaluate(()=>document.fonts.ready);await page.waitForFunction(()=>typeof window.CLEE_setLanguage==='function');
   for(const lang of ['fr','en']){
    await page.locator('[data-lang="'+lang+'"]').evaluate(button=>button.click());await page.waitForTimeout(50);
-   const s=await page.evaluate(()=>{const cs=q=>getComputedStyle(document.querySelector(q));return{lang:document.documentElement.lang,overflow:document.documentElement.scrollWidth>innerWidth,height:document.documentElement.scrollHeight,release:document.body.dataset.release,navy:cs('.intro').backgroundColor,white:cs('.offers').backgroundColor,font:cs('h1').fontFamily,weight:cs('h1').fontWeight,fontLoaded:[...document.fonts].some(f=>f.family==='Manrope'&&f.status==='loaded'),longDash:/[\u2013\u2014]/.test(document.body.innerText),stripes:[...document.querySelectorAll('.color-band i')].map(n=>getComputedStyle(n).backgroundColor)};});
+   const s=await page.evaluate(()=>{const cs=q=>getComputedStyle(document.querySelector(q));return{lang:document.documentElement.lang,overflow:document.documentElement.scrollWidth>innerWidth,height:document.documentElement.scrollHeight,release:document.body.dataset.release,navy:cs('.intro').backgroundColor,white:cs('.offers').backgroundColor,font:cs('h1').fontFamily,weight:cs('h1').fontWeight,fontLoaded:[...document.fonts].some(f=>f.family==='Manrope'&&f.status==='loaded'),longDash:/[\u2013\u2014]/.test(document.body.innerText),encodingError:/\uFFFD/.test(document.body.innerText),stripes:[...document.querySelectorAll('.color-band i')].map(n=>getComputedStyle(n).backgroundColor)};});
    if(s.overflow||!s.lang.startsWith(lang))throw Error('Layout or language failed '+width+' '+lang+' '+JSON.stringify(s));
    if(width===1440&&s.height>950)throw Error('Desktop exceeds one page: '+s.height);
    if(s.release!=='premium-v5'||s.navy!=='rgb(17, 36, 58)'||s.white!=='rgb(255, 255, 255)')throw Error('Brand failed '+JSON.stringify(s));
-   if(!s.fontLoaded||!s.font.includes('Manrope')||s.weight!=='800'||s.longDash)throw Error('Typography failed '+JSON.stringify(s));
+   if(!s.fontLoaded||!s.font.includes('Manrope')||s.weight!=='800'||s.longDash||s.encodingError)throw Error('Typography failed '+JSON.stringify(s));
    if(JSON.stringify(s.stripes)!==JSON.stringify(['rgb(229, 11, 20)','rgb(234, 79, 18)','rgb(33, 169, 60)','rgb(1, 181, 236)']))throw Error('Stripe colors failed');
    if(!(await page.locator('.poly-logo').evaluate(i=>i.complete&&i.naturalWidth>0)))throw Error('Logo missing');
    const workshop=await page.locator('.workshop-document').getAttribute('href');
