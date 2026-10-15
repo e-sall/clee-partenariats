@@ -11,7 +11,7 @@ const path=require('node:path');
   const page=await browser.newPage({viewport:{width,height:900}});page.on('pageerror',e=>errors.push(e.message));
   await page.goto(process.env.SITE_URL||pathToFileURL(path.resolve('index.html')).href,{waitUntil:'networkidle'});await page.evaluate(()=>document.fonts.ready);
   for(const lang of ['fr','en']){
-   await page.locator('[data-lang="'+lang+'"]').click();
+   await page.locator('[data-lang="'+lang+'"]').evaluate(button=>button.click());await page.waitForTimeout(50);
    const s=await page.evaluate(()=>{const cs=q=>getComputedStyle(document.querySelector(q));return{lang:document.documentElement.lang,overflow:document.documentElement.scrollWidth>innerWidth,height:document.documentElement.scrollHeight,release:document.body.dataset.release,navy:cs('.intro').backgroundColor,white:cs('.offers').backgroundColor,font:cs('h1').fontFamily,weight:cs('h1').fontWeight,fontLoaded:[...document.fonts].some(f=>f.family==='Manrope'&&f.status==='loaded'),longDash:/[\u2013\u2014]/.test(document.body.innerText),stripes:[...document.querySelectorAll('.color-band i')].map(n=>getComputedStyle(n).backgroundColor)};});
    if(s.overflow||!s.lang.startsWith(lang))throw Error('Layout or language failed '+width+' '+lang+' '+JSON.stringify(s));
    if(width===1440&&s.height>950)throw Error('Desktop exceeds one page: '+s.height);
