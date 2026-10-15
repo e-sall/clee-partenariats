@@ -15,3 +15,5 @@ footer{display:flex;align-items:center;justify-content:space-between;gap:20px;pa
 @media(prefers-reduced-motion:reduce){:root{scroll-behavior:auto}}
 
 html,body{max-width:100%;overflow-x:hidden}.sheet,.header,.brand,.header-right,.offers,.offer,.text-link,.text-link>span:first-child{min-width:0}.text-link>span:first-child{overflow-wrap:anywhere}
+
+@media(max-width:700px){h1,h2,p,a,span{overflow-wrap:anywhere}.brand{flex-shrink:1}.header-right{flex-shrink:0}}

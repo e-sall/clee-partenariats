@@ -13,7 +13,7 @@ const path=require('node:path');
   for(const lang of ['fr','en']){
    await page.locator('[data-lang="'+lang+'"]').click();
    const s=await page.evaluate(()=>{const cs=q=>getComputedStyle(document.querySelector(q));return{lang:document.documentElement.lang,overflow:document.documentElement.scrollWidth>innerWidth,height:document.documentElement.scrollHeight,release:document.body.dataset.release,navy:cs('.intro').backgroundColor,white:cs('.offers').backgroundColor,font:cs('h1').fontFamily,weight:cs('h1').fontWeight,fontLoaded:[...document.fonts].some(f=>f.family==='Manrope'&&f.status==='loaded'),longDash:/[\u2013\u2014]/.test(document.body.innerText),stripes:[...document.querySelectorAll('.color-band i')].map(n=>getComputedStyle(n).backgroundColor)};});
-   if(s.overflow||!s.lang.startsWith(lang))throw Error('Layout or language failed '+width+' '+lang);
+   if(s.overflow||!s.lang.startsWith(lang))throw Error('Layout or language failed '+width+' '+lang+' '+JSON.stringify(s));
    if(width===1440&&s.height>950)throw Error('Desktop exceeds one page: '+s.height);
    if(s.release!=='premium-v5'||s.navy!=='rgb(17, 36, 58)'||s.white!=='rgb(255, 255, 255)')throw Error('Brand failed '+JSON.stringify(s));
    if(!s.fontLoaded||!s.font.includes('Manrope')||s.weight!=='800'||s.longDash)throw Error('Typography failed '+JSON.stringify(s));
@@ -30,3 +30,4 @@ const path=require('node:path');
  }
  if(errors.length)throw Error(errors.join('\n'));await browser.close();console.log('PASS full visual, functional and public audit');
 })().catch(e=>{console.error(e);process.exit(1)});
+
