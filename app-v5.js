@@ -53,7 +53,24 @@
   window.CLEE_setLanguage = setLanguage;
   document.addEventListener('click', event => {
     const button = event.target.closest('[data-lang]');
-    if (button) setLanguage(button.dataset.lang);
+    if (button) {
+      setLanguage(button.dataset.lang);
+      if (typeof window.gtag === 'function') window.gtag('event', 'language_change', {site_language: button.dataset.lang});
+      return;
+    }
+    const link = event.target.closest('a');
+    if (!link || typeof window.gtag !== 'function') return;
+    let ctaName = '';
+    if (link.classList.contains('workshop-document')) ctaName = 'workshops_pdf';
+    else if (link.getAttribute('href')?.includes('CLEE_Cahier_Ingenieur')) ctaName = 'cahier_project_proposal_pdf';
+    else if (link.classList.contains('form-link')) ctaName = 'interest_form';
+    else if (link.classList.contains('mail-link')) ctaName = 'email_cta';
+    else if (link.href.includes('linkedin.com')) ctaName = 'linkedin';
+    else if (link.href.includes('jc.aep.polymtl.ca')) ctaName = 'clee_website';
+    if (ctaName) window.gtag('event', 'cta_click', {
+      cta_name: ctaName,
+      site_language: document.documentElement.lang.startsWith('en') ? 'en' : 'fr'
+    });
   });
   window.addEventListener('popstate', () => setLanguage(new URLSearchParams(location.search).get('lang'), false));
   setLanguage(new URLSearchParams(location.search).get('lang'), false);
